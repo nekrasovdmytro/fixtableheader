@@ -99,7 +99,8 @@
             obj.container.width(obj.header.width());
             obj.container.height(obj.header.height);
             obj.container.find('th').each(function (index) {
-                var cellWidth = obj.grid.find('th').eq(index).width();
+
+                var cellWidth = parseInt(obj.grid.find('th').eq(index).width()) + parseInt(obj.grid.find('th').eq(index).css('padding-left')) + parseInt(obj.grid.find('th').eq(index).css('padding-right'));
                 $(this).css('width', cellWidth);
             });
 
@@ -124,3 +125,4 @@
 
     };
 })(jQuery);
+
